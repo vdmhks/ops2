@@ -69,6 +69,8 @@ function Detail(props: DetailProps): JSX.Element {
     )
   }
 
+  console.log(qttval)
+
 
 
   return (

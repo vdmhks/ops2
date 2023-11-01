@@ -35,7 +35,7 @@ let cart = createSlice({
   initialState: [
     { id: 0, imgurl: "../img/product1.jpg", name: "갸또 쇼콜라", count: 1, ogprice: 38000 },
     { id: 1, imgurl: "../img/product2.jpg", name: "쉭쎄", count: 1, ogprice: 29000 },
-    { id: 2, imgurl: "../img/product3.jpg", name: "초코 구운과자 묶음 (4+1)", count: 2, ogprice: 9200, },
+    { id: 2, imgurl: "../img/product3.jpg", name: "초코 구운과자 묶음 (4+1)", count: 2, ogprice: 9200 },
   ] as CartItem[],
   reducers: {
     addCount(state, action: PayloadAction<number>) {
@@ -43,6 +43,10 @@ let cart = createSlice({
         return a.id === action.payload;
       });
       console.log(num);
+      console.log("내가 선택한 상품"+ action.payload);
+      console.log("내가 추가한 상품갯수는"+ state[num].id);
+      console.log("내가 추가한 상품갯수는"+ state[num].count);
+
       state[num].count++;
       
     },
