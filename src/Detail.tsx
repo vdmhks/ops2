@@ -28,7 +28,7 @@ function Detail(props: DetailProps): JSX.Element {
   const lastprice2 = priceChange(productprice);
 
   const downqttHandler = () => {
-    if (qttval == 1) {
+    if (qttval === 1) {
       alert("최소 주문수량은 1개 입니다.");
     } else {
       setQttval(qttval - 1);
@@ -58,20 +58,16 @@ function Detail(props: DetailProps): JSX.Element {
     dispatch(
       addItem({
         id: selProduct?.id || 0,
-        imgurl: selProduct?.imgurl
-          ? selProduct.imgurl.replace("img/", "")
-          : "",
+        imgurl: selProduct?.imgurl ? selProduct.imgurl.replace("img/", "") : "",
         name: selProduct?.title || "",
         count: qttval,
         ogprice: productprice,
         price: price1,
       })
-    )
-  }
+    );
+  };
 
-  console.log(qttval)
-
-
+  console.log(qttval);
 
   return (
     <>
@@ -88,7 +84,7 @@ function Detail(props: DetailProps): JSX.Element {
                 <h3>ADD BASKET</h3>
               </div>
               <div className="content">
-                <img src="../img/img_basket.png" />
+                <img src="../img/img_basket.png" alt="" />
                 <p>장바구니에 상품이 정상적으로 담겼습니다.</p>
               </div>
               <div className="ecbasebutton">
@@ -101,20 +97,27 @@ function Detail(props: DetailProps): JSX.Element {
                   장바구니 이동
                 </a>
                 <a
+                  href=""
                   className="tinybutton03"
                   onClick={() => setBasketlayer(false)}
                 >
                   쇼핑계속하기
                 </a>
               </div>
-              <a className="close" onClick={() => setBasketlayer(false)}>
-                <img src="../img/btn_close.gif" />
+              <a
+                href=""
+                className="close"
+                onClick={() => setBasketlayer(false)}
+              >
+                <img src="../img/btn_close.gif" alt="" />
               </a>
             </div>
             <div className="path">
               <ol>
                 <li>
-                  <a href="/">홈</a>
+                  <a href="/">
+                    홈
+                  </a>
                 </li>
                 <li>
                   <a>{selProduct?.category}</a>
@@ -128,7 +131,7 @@ function Detail(props: DetailProps): JSX.Element {
                     <div className="thumbnail swipercontainer">
                       <ul className="swiperwrapper">
                         <li className="swiperslide2">
-                          <img src={'/types/..'+selProduct?.imgurl}></img>
+                          <img src={"/types/.." + selProduct?.imgurl} alt=""></img>
                         </li>
                       </ul>
                     </div>
@@ -196,12 +199,14 @@ function Detail(props: DetailProps): JSX.Element {
                                 type="text"
                               ></input>
                               <a
+                                href=""
                                 className="up quantityup"
                                 onClick={upqttHandler}
                               >
                                 수량증가
                               </a>
                               <a
+                                href=""
                                 className="down quantitydown"
                                 onClick={downqttHandler}
                               >
@@ -229,6 +234,7 @@ function Detail(props: DetailProps): JSX.Element {
                 <div className="productaction xansproductaction">
                   <div className="flex">
                     <a
+                      href=""
                       className="btnsubmit gfull sizel"
                       onClick={() => {
                         cartHandler();
@@ -480,8 +486,12 @@ function Detail(props: DetailProps): JSX.Element {
                       <p className="nodata">게시물이 없습니다</p>
                       <div className="ecbasebutton">
                         <span className="gright">
-                          <a className="btnnormalfix sizem">전체 보기</a>
-                          <a className="btnsubmitfix sizem">리뷰작성</a>
+                          <a className="btnnormalfix sizem">
+                            전체 보기
+                          </a>
+                          <a className="btnsubmitfix sizem">
+                            리뷰작성
+                          </a>
                         </span>
                       </div>
                       <div className="ecbasepagination typelist">
@@ -489,7 +499,9 @@ function Detail(props: DetailProps): JSX.Element {
                         <a></a>
                         <ol>
                           <li>
-                            <a className="this">1</a>
+                            <a className="this">
+                              1
+                            </a>
                           </li>
                         </ol>
                         <a></a>
@@ -508,8 +520,12 @@ function Detail(props: DetailProps): JSX.Element {
                       <p className="nodata">게시물이 없습니다</p>
                       <div className="ecbasebutton">
                         <span className="gright">
-                          <a className="btnnormalfix sizem">전체 보기</a>
-                          <a className="btnsubmitfix sizem">상품문의하기</a>
+                          <a className="btnnormalfix sizem">
+                            전체 보기
+                          </a>
+                          <a className="btnsubmitfix sizem">
+                            상품문의하기
+                          </a>
                         </span>
                       </div>
                     </div>
