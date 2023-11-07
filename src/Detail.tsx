@@ -97,7 +97,6 @@ function Detail(props: DetailProps): JSX.Element {
                   장바구니 이동
                 </a>
                 <a
-                  href=""
                   className="tinybutton03"
                   onClick={() => setBasketlayer(false)}
                 >
@@ -105,7 +104,6 @@ function Detail(props: DetailProps): JSX.Element {
                 </a>
               </div>
               <a
-                href=""
                 className="close"
                 onClick={() => setBasketlayer(false)}
               >
@@ -197,16 +195,15 @@ function Detail(props: DetailProps): JSX.Element {
                                 id="quantity"
                                 value={qttval}
                                 type="text"
+                                placeholder="1"
                               ></input>
                               <a
-                                href=""
                                 className="up quantityup"
                                 onClick={upqttHandler}
                               >
                                 수량증가
                               </a>
                               <a
-                                href=""
                                 className="down quantitydown"
                                 onClick={downqttHandler}
                               >
@@ -234,7 +231,6 @@ function Detail(props: DetailProps): JSX.Element {
                 <div className="productaction xansproductaction">
                   <div className="flex">
                     <a
-                      href=""
                       className="btnsubmit gfull sizel"
                       onClick={() => {
                         cartHandler();

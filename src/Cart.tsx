@@ -108,6 +108,7 @@ function Cart(): JSX.Element {
                           id="basketchkid0"
                           name="basketproductnormaltypenormal"
                           className="check"
+                          placeholder="1"
                         ></input>
                         <Link
                           className="thumbnail"
@@ -136,6 +137,7 @@ function Cart(): JSX.Element {
                                 name="quantityname0"
                                 value={state.cart[i].count}
                                 type="text"
+                                placeholder="1"
                               ></input>
                               <a
                                 className="up"
